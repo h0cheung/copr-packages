@@ -16,6 +16,7 @@ URL:	 %{forgeurl}
 Source:  %{forgesource}
 
 BuildRequires: gcc
+BuildRequires: gcc-c++
 BuildRequires: kernel-headers
 BuildRequires: cmake
 Requires:      interception-tools
