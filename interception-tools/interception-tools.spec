@@ -2,7 +2,7 @@
 %define build_date %(date +"%Y%m%d")
 
 %global forgeurl https://github.com/yoyota/interception-tool
-%global tag      master
+%global branch   master
 
 %forgemeta
 
@@ -13,7 +13,8 @@ Summary:        A minimal composable infrastructure on top of libudev and libevd
 
 License:        GPLv3+
 URL:	 %{forgeurl}
-Source:  %{forgesource}
+Source0:  %{forgesource}
+Source1:  udevmon.service
 
 BuildRequires: boost-devel
 BuildRequires: cmake
