@@ -39,7 +39,7 @@ events of evdev devices.
 rm -rf $RPM_BUILD_ROOT
 %cmake_install
 
-install -Dm644 udevmon.service $RPM_BUILD_ROOT%{_unitdir}/udevmon.service
+install -Dm644 %{S:1} $RPM_BUILD_ROOT%{_unitdir}/udevmon.service
 
 %preun
 %systemd_preun udevmon.service
