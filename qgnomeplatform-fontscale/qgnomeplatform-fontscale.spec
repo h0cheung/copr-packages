@@ -21,9 +21,6 @@ BuildRequires:  gsettings-desktop-schemas-devel
 BuildRequires:  libinput-devel
 BuildRequires:  libXrender-devel
 
-Provides:       qgnomeplatform
-Conflicts:       qgnomeplatform
-
 %description
 QGnomePlatform is a Qt Platform Theme aimed to accommodate as much of
 GNOME settings as possibleand utilize them in Qt applications without
@@ -41,11 +38,14 @@ BuildRequires:  libadwaita-qt5-devel >= 1.4.1
 %{?_qt5:Requires: %{_qt5}%{?_isa} = %{_qt5_version}}
 Requires:       adwaita-qt5%{?_isa}
 
+Provides:       qgnomeplatform-qt5 = %{version}-%{release}
+Conflicts:       qgnomeplatform-qt5
+
 %if (0%{?fedora} && 0%{?fedora} <= 38)
 # Replace QGnomePlatform package with this as it was the Qt5 flavor
-Obsoletes:      %{name} < 0.8.4-5
-Provides:       %{name} = %{version}-%{release}
-Provides:       %{name}%{?_isa} = %{version}-%{release}
+Obsoletes:      qgnomeplatform < 0.8.4-5
+Provides:       qgnomeplatform = %{version}-%{release}
+Provides:       qgnomeplatform{?_isa} = %{version}-%{release}
 %endif
 
 # When GNOME Shell and Qt 5 are installed, we want this by default
@@ -67,6 +67,9 @@ BuildRequires:  libadwaita-qt6-devel >= 1.4.1
 
 %{?_qt6:Requires: %{_qt6}%{?_isa} = %{_qt6_version}}
 Requires:       adwaita-qt6%{?_isa}
+
+Provides:       qgnomeplatform-qt6 = %{version}-%{release}
+Conflicts:       qgnomeplatform-qt6
 
 # When GNOME Shell and Qt 6 are installed, we want this by default
 Supplements:   (qt6-qtbase and gnome-shell)
