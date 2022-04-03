@@ -1,0 +1,36 @@
+diff --git a/src/common/gnomesettings.cpp b/src/common/gnomesettings.cpp
+index 961f75d..e1563ad 100644
+--- a/src/common/gnomesettings.cpp
++++ b/src/common/gnomesettings.cpp
+@@ -555,12 +555,12 @@ void GnomeSettingsPrivate::loadTheme()
+ }
+ 
+ // FIXME: duplicate
+-static QFont* qt_fontFromString(const QString &name)
++static QFont* qt_fontFromString(const QString &name, const gdouble scaling = 1)
+ {
+     QFont *font = new QFont(QLatin1String("Sans"), 10);
+ 
+     PangoFontDescription *desc = pango_font_description_from_string(name.toUtf8());
+-    font->setPointSizeF(static_cast<float>(pango_font_description_get_size(desc)) / PANGO_SCALE);
++    font->setPointSizeF(static_cast<float>(pango_font_description_get_size(desc)) / PANGO_SCALE * scaling);
+ 
+     QString family = QString::fromUtf8(pango_font_description_get_family(desc));
+     if (!family.isEmpty()) {
+@@ -607,6 +607,7 @@ void GnomeSettingsPrivate::loadFonts()
+     m_fonts.clear();
+ 
+     const QStringList fontTypes { "font-name", "monospace-font-name", "titlebar-font" };
++    gdouble scaling = g_settings_get_double(m_settings, "text-scaling-factor");
+ 
+     for (const QString &fontType : fontTypes) {
+         const QString fontName = getSettingsProperty<QString>(fontType);
+@@ -614,7 +615,7 @@ void GnomeSettingsPrivate::loadFonts()
+             qCWarning(QGnomePlatform) << "Couldn't get " << fontType;
+         } else {
+             qCDebug(QGnomePlatform) << "String name: " << fontName;
+-            QFont *font = qt_fontFromString(fontName);
++            QFont *font = qt_fontFromString(fontName, scaling);
+             if (fontType == QStringLiteral("font-name")) {
+                 m_fonts[QPlatformTheme::SystemFont] = font;
+                 qCDebug(QGnomePlatform) << "Font name: " << font->family() << " (size " << font->pointSize() << ")";
