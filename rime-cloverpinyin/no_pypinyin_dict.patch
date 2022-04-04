@@ -1,0 +1,51 @@
+diff --git a/src/clover-dict-gen b/src/clover-dict-gen
+index 340101a..1c994aa 100755
+--- a/src/clover-dict-gen
++++ b/src/clover-dict-gen
+@@ -9,9 +9,6 @@ import argparse
+ import os
+ import sys
+ 
+-from pypinyin_dict.phrase_pinyin_data import cc_cedict
+-cc_cedict.load()
+-
+ # 从 pypinyin 库里得到所有文字及其若干个拼音
+ pinyin_dict = pypinyin.pinyin_dict.pinyin_dict
+ replace_symbol_to_no_symbol = pypinyin.style._utils.replace_symbol_to_no_symbol
+@@ -19,9 +16,9 @@ initials_set = set(pypinyin.style._constants._INITIALS)   # 声母表
+ initials_set.add('ng')
+ 
+ # 修复一些多音字错误
+-#pypinyin.load_phrases_dict({
+-#    '还珠格格': [['huán'], ['zhū'], ['gé'], ['gé']]
+-#    })
++pypinyin.load_phrases_dict({
++    '还珠格格': [['huán'], ['zhū'], ['gé'], ['gé']]
++    })
+ 
+ pypinyin.load_phrases_dict({
+     '前传': [['qián'], ['zhuàn']]
+@@ -30,6 +27,9 @@ pypinyin.load_phrases_dict({
+ pypinyin.load_phrases_dict({
+     '后传': [['hòu'], ['zhuàn']]
+     })
++#pypinyin.load_phrases_dict({
++#    '帧': [['zhēn']]
++#    })
+ 
+ class DictGenerator:
+     def fixPinyin(self, pinyin):
+diff --git a/src/thuocl2rime b/src/thuocl2rime
+index 0377f18..0d7d154 100755
+--- a/src/thuocl2rime
++++ b/src/thuocl2rime
+@@ -8,9 +8,6 @@ import argparse
+ import os
+ import sys
+ 
+-from pypinyin_dict.phrase_pinyin_data import cc_cedict
+-cc_cedict.load()
+-
+ initials_set = set(pypinyin.style._constants._INITIALS)   # 声母表
+ 
+ def main(args):
