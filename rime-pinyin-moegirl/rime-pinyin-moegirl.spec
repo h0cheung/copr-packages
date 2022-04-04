@@ -8,7 +8,7 @@ Source0:        https://github.com/outloudvi/mw2fcitx/releases/download/%{versio
 Source1:        https://raw.githubusercontent.com/outloudvi/mw2fcitx/master/LICENSE
 BuildArch:      noarch
 
-Recommends:     fcitx5
+Recommends:     librime
 
 %undefine _missing_build_ids_terminate_build
 %undefine _debugsource_packages
