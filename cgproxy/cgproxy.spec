@@ -7,7 +7,7 @@ Version:                        0.21
 %forgemeta
 
 Name:            cgproxy
-Release:         2%{?dist}
+Release:         3%{?dist}
 Summary:         Transparent Proxy with cgroup v2
 License:         GPLv2
 URL:             %{forgeurl}
