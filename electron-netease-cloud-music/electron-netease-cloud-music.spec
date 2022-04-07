@@ -15,7 +15,7 @@ Source2:        electron-netease-cloud-music.desktop
 
 Requires:       electron
 BuildRequires:  yarnpkg
-BuildRequires:  node
+BuildRequires:  nodejs
 
 %description
 %{summary}.
