@@ -1,0 +1,13 @@
+diff --git a/bubblejail/services.py b/bubblejail/services.py
+index a355b1c..5b35928 100644
+--- a/bubblejail/services.py
++++ b/bubblejail/services.py
+@@ -575,7 +575,7 @@ class Network(BubblejailService):
+ 
+         yield ShareNetwork()
+         yield ReadOnlyBind('/etc/resolv.conf')
+-        yield ReadOnlyBind('/etc/ca-certificates')
++        yield ReadOnlyBind('/etc/pki/ca-trust')
+         yield ReadOnlyBind('/etc/ssl')
+ 
+     name = 'network'
