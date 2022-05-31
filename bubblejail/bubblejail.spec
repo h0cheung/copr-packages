@@ -1,12 +1,11 @@
 Name:           bubblejail
-Version:        0.5.2
+Version:        0.6.0
 Release:        1%{?dist}
 Summary:        Bubblewrap based sandboxing for desktop applications
 
 License:        GPLv3+
 URL:            https://github.com/igo95862/bubblejail
 Source0:        %{url}/archive/refs/tags/%{version}.tar.gz
-Patch0:         ca_path_fix.patch
 
 BuildRequires:  meson
 BuildRequires:  m4
