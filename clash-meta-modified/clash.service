@@ -3,9 +3,16 @@ Description=A rule based proxy in Go.
 After=network.target
 
 [Service]
-Type=exec
+DynamicUser=Yes
+ReadWritePaths=/etc/clash
+LimitNPROC=500
+LimitNOFILE=1000000
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+ExecStart=/usr/bin/clash -d /etc/clash
 Restart=on-abort
-ExecStart=/usr/bin/clash
+StandardOutput=file:/var/log/clash/clash.log
 
 [Install]
 WantedBy=default.target

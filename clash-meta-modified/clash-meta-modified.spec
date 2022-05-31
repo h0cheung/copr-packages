@@ -2,9 +2,9 @@
 %bcond_without check
 %global build_timestamp %(date +"%Y%m%d")
 
-# https://github.com/h0cheung/clash-meta
-%global goipath         github.com/h0cheung/clash-meta
-%global tag             Meta
+# https://github.com/MetaCubeX/Clash.Meta
+%global goipath         github.com/MetaCubeX/Clash.Meta
+%global tag             Alpha
 
 %gometa
 
@@ -15,7 +15,7 @@ A rule-based tunnel in Go.}
 %global godocs          docs README.md
 
 Name:           clash-meta-modified
-Version:        Meta
+Version:        Alpha
 Release:        %autorelease
 Summary:        A rule-based tunnel in Go
 Provides:       clash
@@ -26,6 +26,7 @@ URL:            %{gourl}
 Source0:        %{gosource}
 Source1:        clash.service
 Source2:        clash@.service
+Patch0:         clash-domainfilter-fallback-by-default.patch
 
 BuildRequires:  systemd-rpm-macros
 BuildRequires:  git
@@ -39,7 +40,7 @@ BuildRequires:  git
 %gopkg
 
 %prep
-%goprep
+%goprep -p1
 chmod -x docs/logo.png
 
 %build

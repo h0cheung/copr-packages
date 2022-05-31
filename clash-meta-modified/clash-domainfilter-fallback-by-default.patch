@@ -1,0 +1,18 @@
+diff --git a/dns/resolver.go b/dns/resolver.go
+index c5e3286..6b5def8 100644
+--- a/dns/resolver.go
++++ b/dns/resolver.go
+@@ -210,11 +210,11 @@ func (r *Resolver) shouldOnlyQueryFallback(m *D.Msg) bool {
+ 
+ 	for _, df := range r.fallbackDomainFilters {
+ 		if df.Match(domain) {
+-			return true
++			return false
+ 		}
+ 	}
+ 
+-	return false
++	return true
+ }
+ 
+ func (r *Resolver) ipExchange(ctx context.Context, m *D.Msg) (msg *D.Msg, err error) {
