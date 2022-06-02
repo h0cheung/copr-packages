@@ -1,5 +1,5 @@
 %bcond_without check
-%define build_timestamp %(date +"%Y%m%d")
+%global build_timestamp %(date +"%Y%m%d")
 
 %global forgeurl https://gitlab.com/interception/linux/tools.git
 %global branch   master
