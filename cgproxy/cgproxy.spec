@@ -2,7 +2,7 @@
 
 %global __provides_exclude_from ^(%{_libdir}/%{name}/.*\\.so.*)$
 %global forgeurl                https://github.com/h0cheung/cgproxy
-Version:                        0.21
+Version:                        0.22
 
 %forgemeta
 
@@ -92,5 +92,8 @@ fi
 
 
 %changelog
+* Tue May 31 2022 h-cheung <mail@h-cheung.cf>
+- Update to 0.22
+
 * Fri Apr 01 2022 h-cheung <mail@h-cheung.cf>
 - Initial cgproxy build

@@ -1,7 +1,7 @@
 %bcond_without check
 %define build_date %(date +"%Y%m%d")
 
-%global forgeurl https://github.com/yoyota/interception-tool
+%global forgeurl https://gitlab.com/interception/linux/tools.git
 %global branch   master
 
 %forgemeta
@@ -13,7 +13,7 @@ Summary:        A minimal composable infrastructure on top of libudev and libevd
 
 License:        GPLv3+
 URL:	 %{forgeurl}
-Source0:  %{forgesource}
+Source0:  https://gitlab.com/interception/linux/tools/-/archive/master/tools-master.tar.bz2
 Source1:  udevmon.service
 
 BuildRequires: boost-devel
@@ -29,7 +29,7 @@ The Interception Tools is a small set of utilities for operating on input
 events of evdev devices.
 
 %prep
-%forgesetup
+%autosetup -n tools-master
 
 %build
 %cmake
