@@ -20,7 +20,7 @@ BuildRequires:           rust-libsystemd-devel
 BuildRequires:           systemd-libs
 BuildRequires:           systemd-devel
 BuildRequires:           rust-libsystemd+default-devel
-BuildRequires:           rust-libsqlite3-sys+default-devel.noarch
+BuildRequires:           rust-libsqlite3-sys+default-devel
 
 Requires:		 gnome-shell
 
