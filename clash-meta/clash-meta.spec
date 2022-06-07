@@ -14,7 +14,7 @@ A rule-based tunnel in Go.}
 %global golicenses      LICENSE
 %global godocs          docs README.md
 
-Name:           clash-meta-modified
+Name:           clash
 Version:        Alpha
 Release:        %autorelease
 Summary:        A rule-based tunnel in Go
