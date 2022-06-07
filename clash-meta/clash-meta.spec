@@ -40,7 +40,6 @@ BuildRequires:  git
 
 %prep
 %goprep
-%patch0 -p1
 sed "s/unknown version/${pkgver}/" -i constant/version.go
 sed "s/unknown time/$(LANG=C date -u)/" -i constant/version.go
 chmod -x docs/logo.png
