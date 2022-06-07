@@ -42,12 +42,13 @@ provider DBus API and exposes recent projects from Jetbrains IDEs
 %prep
 %autosetup -n %{name}
 
+%define my_cmake_flags PREFIX=/usr DATADIR=%{_datadir} LIBEXECDIR=%{_libexecdir}/%{name} USERUNITDIR=%{_userunitdir}
+
 %build
-%make_build
+%make_build %{my_cmake_flags}
 
 %install
-%make_install PREFIX=/usr DATADIR=%{_datadir} LIBEXECDIR=%{_libexecdir}/%{name} USERUNITDIR=%{_userunitdir}
-
+%make_install %{my_cmake_flags}
 
 %post
 %systemd_user_post %{name}.service
