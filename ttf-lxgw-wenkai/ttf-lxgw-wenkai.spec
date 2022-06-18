@@ -15,7 +15,7 @@ BuildArch:      noarch
 %{summary}.
 
 %prep
-%setup -qcn lxgw-wenkai-v%{version}
+%setup -qn lxgw-wenkai-v%{version}
 %define _ttfontsdir /usr/share/fonts/lxgw-wenkai
 
 %build
