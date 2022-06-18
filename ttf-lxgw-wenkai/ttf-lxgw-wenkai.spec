@@ -4,7 +4,7 @@ Release:        1%{?dist}
 Summary:        An open-source Chinese font derived from Fontworks' Klee One
 License:        OFL-1.1
 Url:            https://github.com/lxgw/LxgwWenKai
-Source0:        %{url}/releases/download/v%{version}/lxgw-wenkai-%{version}.tar.gz
+Source0:        %{url}/releases/download/v%{version}/lxgw-wenkai-v%{version}.tar.gz
 BuildRequires:  fontpackages-devel
 BuildArch:      noarch
 
@@ -15,7 +15,7 @@ BuildArch:      noarch
 %{summary}.
 
 %prep
-%setup -qcn lxgw-wenkai-%{version}
+%setup -qcn lxgw-wenkai-v%{version}
 %define _ttfontsdir /usr/share/fonts/lxgw-wenkai
 
 %build
