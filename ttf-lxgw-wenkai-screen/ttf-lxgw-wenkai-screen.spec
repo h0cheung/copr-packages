@@ -17,6 +17,7 @@ BuildArch:      noarch
 %{summary}.
 
 %prep
+cp %{S:2} .
 %define _ttfontsdir /usr/share/fonts/lxgw-wenkai-screen
 
 %build
@@ -30,7 +31,7 @@ install -m 644 %{S:0} %{S:1} %{buildroot}%{_ttfontsdir}
 %postun
 
 %files
-%license %{S:2}
+%license License.txt
 %{_ttfontsdir}/*.ttf
 %dir %{_ttfontsdir}
 
