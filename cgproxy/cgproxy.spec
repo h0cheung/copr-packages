@@ -7,7 +7,7 @@ Version:                        0.22
 %forgemeta
 
 Name:            cgproxy
-Release:         3%{?dist}
+Release:         4%{?dist}
 Summary:         Transparent Proxy with cgroup v2
 License:         GPLv2
 URL:             %{forgeurl}
@@ -77,10 +77,6 @@ It resembles with proxychains and tsocks in default setting.
 
 # scriptlets >>
 %post
-if [ $1 -eq 1 ] && [ -e "%{_sysconfdir}/firewalld/firewalld.conf" ]; then
-    # Package installation, not upgrade
-    sed -e 's/^FirewallBackend=.*$/FirewallBackend=iptables/g' -i %{_sysconfdir}/firewalld/firewalld.conf || :
-fi
 %systemd_post cgproxy.service
 
 %preun
@@ -92,6 +88,9 @@ fi
 
 
 %changelog
+* Tue June 18 2022 h-cheung <mail@h-cheung.cf>
+- Remove postrun
+
 * Tue May 31 2022 h-cheung <mail@h-cheung.cf>
 - Update to 0.22
 
