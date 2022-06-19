@@ -2,12 +2,12 @@
 
 %global __provides_exclude_from ^(%{_libdir}/%{name}/.*\\.so.*)$
 %global forgeurl                https://github.com/h0cheung/cgproxy
-Version:                        0.22
+Version:                        0.23
 
 %forgemeta
 
 Name:            cgproxy
-Release:         4%{?dist}
+Release:         1%{?dist}
 Summary:         Transparent Proxy with cgroup v2
 License:         GPLv2
 URL:             %{forgeurl}
@@ -88,6 +88,9 @@ It resembles with proxychains and tsocks in default setting.
 
 
 %changelog
+* Tue June 19 2022 h-cheung <mail@h-cheung.cf>
+- Bump version
+
 * Tue June 18 2022 h-cheung <mail@h-cheung.cf>
 - Remove postrun
 
