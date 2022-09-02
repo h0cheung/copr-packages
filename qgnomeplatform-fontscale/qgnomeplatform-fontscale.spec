@@ -1,6 +1,6 @@
 Name:           qgnomeplatform-fontscale
 Version:        0.8.4
-Release:        7%{?dist}
+Release:        8%{?dist}
 Summary:        Qt Platform Theme aimed to accommodate Gnome settings
 
 License:        LGPLv2+
