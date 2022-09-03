@@ -8,7 +8,7 @@ URL:            https://github.com/MartinBriza/QGnomePlatform
 Source0:        https://github.com/MartinBriza/QGnomePlatform/archive/%{version}/QGnomePlatform-%{version}.tar.gz
 
 # Upstream patches
-Patch0:         qgnomeplatform-use-more-updated-window-states-value.patch
+# Patch0:         qgnomeplatform-use-more-updated-window-states-value.patch
 # Font scale
 Patch1:         qgnomeplatform-font-scale.patch
 
