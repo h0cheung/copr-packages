@@ -84,7 +84,7 @@ modifying them - making them fit into the environment as well as possible.
 
 %build
 %global _vpath_builddir %{_target_platform}-qt5
-%cmake
+%cmake -DDECORATION_SHADOWS_SUPPORT=true
 %cmake_build
 
 %global _vpath_builddir %{_target_platform}-qt6
