@@ -91,10 +91,10 @@ It resembles with proxychains and tsocks in default setting.
 * Sun Apr 30 2023 h-cheung <yywsyywsyyws@gmail.com>
 - Bump version
 
-* Tue June 19 2022 h-cheung <mail@h-cheung.cf>
+* Tue Jun 19 2022 h-cheung <mail@h-cheung.cf>
 - Bump version
 
-* Tue June 18 2022 h-cheung <mail@h-cheung.cf>
+* Tue Jun 18 2022 h-cheung <mail@h-cheung.cf>
 - Remove postrun
 
 * Tue May 31 2022 h-cheung <mail@h-cheung.cf>
