@@ -2,7 +2,7 @@
 
 %global __provides_exclude_from ^(%{_libdir}/%{name}/.*\\.so.*)$
 %global forgeurl                https://github.com/h0cheung/cgproxy
-Version:                        0.23
+Version:                        0.24
 
 %forgemeta
 
@@ -88,6 +88,9 @@ It resembles with proxychains and tsocks in default setting.
 
 
 %changelog
+* Sun Apr 30 2023 h-cheung <yywsyywsyyws@gmail.com>
+- Bump version
+
 * Tue June 19 2022 h-cheung <mail@h-cheung.cf>
 - Bump version
 
