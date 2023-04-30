@@ -1,4 +1,5 @@
 %bcond_without check
+%global toolchain clang
 
 %global __provides_exclude_from ^(%{_libdir}/%{name}/.*\\.so.*)$
 %global forgeurl                https://github.com/h0cheung/cgproxy
@@ -15,12 +16,13 @@ URL:             %{forgeurl}
 Source0:         %{forgesource}
 
 BuildRequires:   cmake >= 3.14
-BuildRequires:   gcc
-BuildRequires:   gcc-c++
+BuildRequires:   clang
+BuildRequires:   llvm
 BuildRequires:   make
 BuildRequires:   json-devel
 BuildRequires:   libbpf-devel
 BuildRequires:   systemd-rpm-macros
+BuildRequires:   bpftool
 
 %{?systemd_requires}
 Requires:        firewalld
